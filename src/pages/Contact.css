@@ -1,0 +1,140 @@
+:root {
+    --main-pink: #ff7eb9;
+    --main-pink-dark: #f94f9c;
+    --main-pink-light: #fff0f7;
+    --main-border: #f8bbd0;
+    --text-dark: #3a0a5c;
+    --shadow: 0 6px 24px rgba(249, 79, 156, 0.1);
+  }
+  
+  .contact-page {
+    background: var(--main-pink-light);
+    padding: 64px 0;
+  }
+  
+  .contact-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+  }
+  
+  .contact-title {
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: var(--main-pink-dark);
+    margin-bottom: 48px;
+  }
+  
+  /* Yeni Grid Yapısı */
+  .contact-layout {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  /* Sol taraftaki büyük kutu (form) */
+  .contact-form-box {
+    flex: 1 1 500px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    min-height: 450px;
+  }
+  
+  .contact-form-box h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--main-pink-dark);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .contact-form-box form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form-box label {
+    font-weight: 600;
+    color: var(--main-pink-dark);
+    margin: 12px 0 6px;
+  }
+  
+  .contact-form-box input,
+  .contact-form-box textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1.5px solid var(--main-border);
+    font-size: 1rem;
+    background: #fff;
+    color: var(--text-dark);
+  }
+  
+  .contact-form-box input:focus,
+  .contact-form-box textarea:focus {
+    outline: none;
+    border-color: var(--main-pink-dark);
+    box-shadow: 0 0 8px rgba(255, 126, 185, 0.3);
+  }
+  
+  .contact-form-box button {
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(to right, var(--main-pink), var(--main-pink-dark));
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .contact-form-box button:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Sağdaki küçük kutular */
+  .contact-info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 0 1 300px;
+  }
+  
+  .contact-info-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+  }
+  
+  .contact-info-box h2 {
+    font-size: 1.2rem;
+    color: var(--main-pink-dark);
+    margin-bottom: 10px;
+  }
+  
+  .contact-info-box p {
+    font-size: 1rem;
+    color: var(--text-dark);
+  }
+  
+  @media (max-width: 768px) {
+    .contact-layout {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .contact-form-box,
+    .contact-info-column {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+  

@@ -1,0 +1,276 @@
+:root {
+  --main-pink: #ff7eb9;
+  --main-pink-dark: #f94f9c;
+  --main-pink-light: #fff0f7;
+  --main-border: #f8bbd0;
+  --text-dark: #3a0a5c;
+  --shadow: 0 6px 24px rgba(249, 79, 156, 0.1);
+}
+
+.contact-page {
+  background: var(--main-pink-light);
+  padding: 64px 0;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--main-pink-dark);
+  margin-bottom: 48px;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.contact-info-box {
+  flex: 1 1 300px;
+  background: #fff;
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.contact-info-box h2 {
+  font-size: 1.4rem;
+  color: var(--main-pink-dark);
+  margin-bottom: 16px;
+}
+
+.contact-info-box p {
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.contact-form-box {
+  flex: 1 1 400px;
+  background: #fff;
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.contact-form-box h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--main-pink-dark);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-form-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-box label {
+  font-weight: 600;
+  color: var(--main-pink-dark);
+  margin: 12px 0 6px;
+}
+
+.contact-form-box input,
+.contact-form-box textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid var(--main-border);
+  font-size: 1rem;
+  background: #fff;
+  color: var(--text-dark);
+}
+
+.contact-form-box input:focus,
+.contact-form-box textarea:focus {
+  outline: none;
+  border-color: var(--main-pink-dark);
+  box-shadow: 0 0 8px rgba(255, 126, 185, 0.3);
+}
+
+.contact-form-box button {
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(to right, var(--main-pink), var(--main-pink-dark));
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.contact-form-box button:hover {
+  transform: scale(1.03);
+}
+
+.error-text {
+  color: #ff3e8e;
+  font-size: 0.9rem;
+  margin-top: -6px;
+  margin-bottom: 10px;
+}
+
+.form-message {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.form-message.success {
+  background-color: #d4f5dc;
+  color: #15803d;
+}
+
+.form-message.error {
+  background-color: #ffe4e6;
+  color: #be123c;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info-box,
+  .contact-form-box {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+/* --- Canhan Tuhafiye Farkı Interaktif ve Animasyonlu Alan --- */
+.farki-anim {
+  animation: farkiFadeIn .9s cubic-bezier(.23,.8,.42,1.01);
+}
+@keyframes farkiFadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.farki-card {
+  cursor: pointer;
+  transition: transform .22s, box-shadow .22s, border-color .22s;
+  border: 2px solid transparent;
+}
+.farki-card:hover, .farki-card:focus {
+  transform: scale(1.065) translateY(-6px);
+  box-shadow: 0 6px 32px #f94f9c33, 0 1.5px 0 #f94f9c22;
+  border-color: #f94f9c;
+}
+.farki-card:hover svg, .farki-card:focus svg {
+  filter: drop-shadow(0 0 6px #f94f9c88) brightness(1.18);
+}
+.farki-slogan-bar {
+  user-select: none;
+  letter-spacing: .5px;
+  animation: sloganPop .7s cubic-bezier(.23,.8,.42,1.01);
+}
+@keyframes sloganPop {
+  from { opacity: 0; transform: scale(.92); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (max-width: 700px) {
+  .farki-feature-row { flex-direction: column; gap: 18px !important; }
+  .farki-card { min-width: 0 !important; max-width: 100% !important; }
+}
+
+/* --- Alt kategori kartları için ekstra stil --- */
+.category-card-alt {
+  position: relative;
+  box-shadow: 0 8px 32px #f8bbd044, 0 1.5px 0 #f94f9c11;
+  border-left: 6px solid #f94f9c;
+  transition: transform .22s, box-shadow .22s, border-color .19s;
+  overflow: hidden;
+}
+.category-card-alt:hover, .category-card-alt:focus {
+  transform: scale(1.045) translateY(-3px) rotate(-1deg);
+  box-shadow: 0 16px 48px #f94f9c33, 0 2px 0 #f94f9c22;
+  border-left: 8px solid #ff7eb9;
+  z-index: 2;
+}
+.category-card-alt > div:first-child {
+  transition: background .19s, box-shadow .19s, transform .22s;
+}
+.category-card-alt:hover > div:first-child {
+  background: #fff0f7;
+  box-shadow: 0 0 14px #ff7eb944;
+  transform: scale(1.12) rotate(6deg);
+}
+.category-card-alt:hover > div:first-child svg {
+  animation: iconBounce 0.7s cubic-bezier(.22,1.2,.36,1) both;
+  color: #f94f9c !important;
+  filter: drop-shadow(0 0 8px #ff7eb9cc);
+}
+@keyframes iconBounce {
+  0%   { transform: scale(1) rotate(0); }
+  20%  { transform: scale(1.18) rotate(-12deg); }
+  40%  { transform: scale(0.92) rotate(8deg); }
+  60%  { transform: scale(1.11) rotate(-6deg); }
+  80%  { transform: scale(0.97) rotate(4deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+.category-card-alt.clicked > div:first-child svg {
+  animation: iconPulseRotate 0.85s cubic-bezier(.22,1.2,.36,1);
+  color: #be185d !important;
+  filter: drop-shadow(0 0 16px #f94f9c88) brightness(1.15);
+}
+@keyframes iconPulseRotate {
+  0%   { transform: scale(1) rotate(0deg); }
+  15%  { transform: scale(1.18) rotate(18deg); }
+  35%  { transform: scale(0.88) rotate(-12deg); }
+  55%  { transform: scale(1.22) rotate(24deg); }
+  75%  { transform: scale(0.94) rotate(-8deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+/* --- İndirimdeki Ürünler Animasyonları --- */
+@keyframes discountPop {
+  0%   { opacity: 0; transform: scale(.92) translateY(40px); }
+  60%  { opacity: 1; transform: scale(1.04) translateY(-6px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.discount-product-section:hover {
+  box-shadow: 0 12px 48px #f43f5e33, 0 2px 0 #f43f5e22;
+  border-color: #f43f5e;
+  animation: none;
+}
+.discount-badge {
+  animation: badgePulse 1.5s infinite alternate, badgeWave 2.8s infinite linear;
+  filter: drop-shadow(0 0 8px #f43f5e44);
+}
+@keyframes badgePulse {
+  0%   { transform: scale(1) rotate(-6deg); box-shadow: 0 2px 10px #be123c44; }
+  100% { transform: scale(1.13) rotate(7deg); box-shadow: 0 6px 24px #f43f5e44; }
+}
+@keyframes badgeWave {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(25deg); }
+}
+
+.discount-exclaim-anim {
+  animation: exclaimBounce 1.1s cubic-bezier(.22,1.2,.36,1) infinite alternate;
+}
+@keyframes exclaimBounce {
+  0%   { transform: scale(1) rotate(-8deg) translateY(0); filter: drop-shadow(0 0 8px #f43f5e); }
+  35%  { transform: scale(1.18) rotate(7deg) translateY(-4px); filter: drop-shadow(0 0 16px #be123c); }
+  70%  { transform: scale(0.92) rotate(-8deg) translateY(3px); }
+  100% { transform: scale(1.07) rotate(8deg) translateY(-2px); }
+}
+
